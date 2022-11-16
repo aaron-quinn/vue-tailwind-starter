@@ -14,12 +14,50 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.7.0",
     "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.2.4",
-    "vite": "^3.2.3"
+    "vite": "^3.2.3",
+    "vue-eslint-parser": "^9.1.0"
   },
   "browserslist": [
     ">0.25%",
     "not op_mini all"
-  ]
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "eslintConfig": {
+    "parser": "vue-eslint-parser",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "globals": {
+      "Vue": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/vue3-recommended",
+      "prettier"
+    ],
+    "rules": {
+      "vue/component-tags-order": [
+        "error",
+        {
+          "order": [
+            "script",
+            "template",
+            "style"
+          ]
+        }
+      ]
+    }
+  }
 }
